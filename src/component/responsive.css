@@ -1,0 +1,450 @@
+/* ..........start of width 1440px.......... */
+@media screen and (max-width:1440px) {
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  html, body {
+    width: 100%;
+    height: 100%;
+  }
+
+  #nav a {
+    font-size: 1.3vw;
+  }
+
+  #nav h4 {
+    font-size: 1.3vw;
+  }
+
+  #heading {
+    margin-top: 300px;
+    margin-left: 150px;
+  }
+
+  #herofooter a {
+    font-size: 1.3vw;
+  }
+  #heading .secondh1 {
+    margin-left: 150px;
+  }
+
+  .about .img {
+    margin-left: 30px;
+    margin-top: 100px;
+  }
+
+  #projects {
+    width: 100%;
+    height: 50vh;
+  }
+}
+
+/* ..........end of width 1440px.......... */
+
+/* ..........start of width 1024px.......... */
+
+@media screen and (max-width:1024px) {
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  html, body {
+    width: 100%;
+    height: 100%;
+  }
+
+  #main {
+    width: 100%;
+    height: 100vh;
+  }
+
+  #hero {
+    width: 100%;
+    height: 100vh;
+  }
+
+  #nav {
+    width: 100%;
+    padding: 20px 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  #nav h4 {
+    font-size: 1.5vw;
+  }
+
+  #nav a {
+    font-size: 1.5vw;
+  }
+
+  #heading {
+    margin-top: 200px;
+    margin-left: 150px;
+  }
+
+  #heading h1 {
+    font-size: 8vw;
+  }
+
+  #heading .secondh1 {
+    margin-left: 100px;
+  }
+
+  .blocktext h5 {
+    font-size: 14px;
+  }
+
+  #herofooter {
+    padding-left: 30px;
+  }
+
+  #herofooter a {
+    font-size: 1.6vw;
+    font-weight: 600;
+  }
+
+  #second {
+    width: 100%;
+    height: 70vh;
+  }
+
+  .about {
+    width: 100%;
+  }
+
+  .about .img {
+    width: 250px;
+    height: 250px;
+  }
+
+  #abouttext h1 {
+    font-size: 3.5vw;
+  }
+
+  #abouttext p {
+    font-size: 1.7vw;
+  }
+
+  .resume {
+    font-size: 1.3vw;
+  }
+
+  #projects {
+    width: 100%;
+    height: 40vh;
+  }
+
+  .elem {
+    width: 100%;
+    padding: 2vw 3vw;
+  }
+
+  .elem h1 {
+    font-size: 6vw;
+  }
+
+  #contact {
+    width: 100%;
+  }
+
+  .details1 h5 {
+    font-size: 1.2vw;
+  }
+
+  #footer a {
+    font-size: 1.2vw;
+  }
+
+}
+
+/* ..........end of width 1024px.......... */
+
+/* ..........start of width 768px.......... */
+
+@media screen and (max-width:768px) {
+  #main {
+    width: 100%;
+  }
+
+  #hero {
+    width: 100%;
+    height: 100vh;
+  }
+
+  #nav {
+    width: 100%;
+    padding: 10px 20px;
+  }
+
+  #nav h4 {
+    font-size: 2vw;
+  }
+
+  #nav a {
+    font-size: 2vw;
+  }
+
+  #heading {
+    margin-top: 200px;
+    margin-left: 100px;
+  }
+
+  #heading .secondh1 {
+    margin-left: 80px;
+  }
+
+  .blocktext h5 {
+    font-size: 12px;
+  }
+
+  #herofooter a {
+    font-size: 1.9vw;
+    font-weight: 600;
+  }
+
+  #second {
+    width: 100%;
+    height: 70vh;
+    padding: 0 70px;
+  }
+
+  .about {
+    width: 100%;
+    margin-top: 100px;
+  }
+
+  .about .img {
+    margin-top: 60px;
+    width: 160px;
+    height: 160px;
+  }
+
+  #abouttext h1 {
+    font-size: 4vw;
+  }
+
+  #abouttext p {
+    font-size: 1.7vw;
+    margin-bottom: -10px;
+  }
+
+  .resume {
+    font-size: 1.4vw;
+    font-weight: 600;
+  }
+
+  #projects {
+    width: 100%;
+    height: 25vh;
+    margin-top: -100px;
+  }
+
+  #contact {
+    width: 100%;
+    height: 20vh;
+    margin-top: 60px;
+  }
+
+  .details1 h5 {
+    font-size: 1.3vw;
+  }
+
+  #footer a {
+    font-size: 1.3vw;
+  }
+
+}
+
+/* ..........end of width 768px.......... */
+
+/* ..........start of width 425px.......... */
+
+@media screen and (max-width:460px) {
+  #main {
+    width: 100%;
+  }
+
+  #hero {
+    width: 100%;
+    height: 100vh;
+  }
+
+  #nav {
+    width: 100%;
+  }
+
+  #nav h4 {
+    font-size: 3vw;
+  }
+
+  #nav a {
+    font-size: 3vw;
+  }
+
+  #heading {
+    margin-left: 60px;
+  }
+
+  #heading .secondh1 {
+    margin-left: 40px;
+  }
+
+  .blocktext h5 {
+    font-size: 2vw;
+  }
+
+  #herofooter a {
+    font-size: 2.8vw;
+  }
+
+  #second {
+    width: 100%;
+    height: 45vh;
+    padding: 0 30px;
+  }
+
+  .about .img {
+    width: 70px;
+    height: 70px;
+    margin-top: 50px;
+  }
+
+  .about {
+    margin-top: -10px;
+  }
+
+  #abouttext h1 {
+    margin-bottom: -30px;
+    font-size: 4vw;
+  }
+  #abouttext p {
+    font-size: 1.9vw;
+    margin-bottom: -20px;
+  }
+
+  #abouttext a {
+    margin-bottom: -10px;
+  }
+
+  #projects {
+    width: 100%;
+    height: 20vw;
+  }
+
+  .elem {
+    padding: 5vw;
+  }
+
+  .elem h1 {
+    font-size: 6vw;
+  }
+
+  .elem h5 {
+    font-size: 2vw;
+  }
+
+  #contact {
+    width: 100%;
+    height: 20vh;
+  }
+
+  .details1 {
+    gap: 10px;
+  }
+
+  .details1 h5 {
+    font-size: 1.7vw;
+  }
+
+  #footer {
+    gap: 10px;
+  }
+
+  #footer a {
+    font-size: 1.7vw;
+  }
+
+}
+
+/* ..........end of width 425px.......... */
+
+/* ..........start of width 375px.......... */
+
+@media screen and (max-width:400px) {
+  #main {
+    width: 100%;
+  }
+
+  #heading {
+    margin-left: 50px;
+    margin-top: 250px;
+  }
+
+  #second {
+    width: 100%;
+    padding: 0 20px;
+    margin-top: 30px;
+  }
+
+  .about .img {
+    width: 70px;
+    height: 70px;
+
+  }
+}
+
+/* ..........end of width 375px.......... */
+
+/* ..........start of width 350px.......... */
+
+@media screen and (max-width:320px) {
+  #main {
+    width: 100%;
+  }
+
+  #heading {
+    margin-left: 40px;
+    margin-top: 250px;
+  }
+
+  #second {
+    width: 100%;
+    padding: 0 20px;
+    margin-top: 30px;
+  }
+
+  .about .img {
+    width: 60px;
+    height: 60px;
+  }
+
+  #contact {
+    width: 100%;
+    height: 10vh;
+  }
+
+  .details1 {
+    gap: 10px;
+    margin-bottom: 50px;
+  }
+
+  .details1 h5 {
+    font-size: 1.5vw;
+  }
+
+  #footer {
+    margin-bottom: 50px;
+  }
+  #footer a {
+    font-size: 1.5vw;
+  }
+}
+
+/* ..........end of width 350px.......... */

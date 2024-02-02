@@ -1,0 +1,237 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: "General Sans", Arial, sans-serif;
+    box-sizing: border-box;
+}
+
+html, body {
+    width: 100%;
+    height: 100%;
+    background-color: #efedff;
+}
+
+#main {
+    width: 100%;
+}
+
+/* start of hero */
+
+#hero {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    color: #000;
+}
+
+#nav {
+    width: 100%;
+    padding: 10px 20px;
+    color: #000;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#nav h4 {
+    font-size: 1vw;
+    font-weight: 600;
+}
+
+#nav a {
+    font-size: 1vw;
+    text-decoration: none;
+    color: #000;
+    font-weight: 600;
+}
+
+#heading {
+    margin-top: 110px;
+    margin-left: 100px;    
+}
+
+#heading h1 {
+    line-height: 1;
+    text-transform: uppercase;
+    font-size: 9vw;
+    font-weight: 600;
+}
+
+#heading .secondh1{
+    margin-left: 210px;
+}
+
+.blocktext {
+    width: fit-content;
+}
+.blocktext h5 {
+    font-size: 15px;
+    text-transform: uppercase;
+    text-align: right;
+}
+
+#herofooter {
+    padding: 0 2vw;
+    position: absolute;
+    bottom: 3%;
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    gap: 30px;
+}
+
+#herofooter a {
+  color: #000;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-weight: 600;
+  transition: color 0.3s; 
+}
+
+#herofooter a:hover {
+  color: #1b263b;
+}
+/* end of hero */
+
+/* start of about me */
+
+#second {
+  width: 100%;
+  height: 70vh;
+  line-height: 10vh;
+  padding: 0 100px;
+}
+
+.about {
+  width: 100%;
+  margin-top: 150px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.about .img {
+  width: 350px;
+  height: 350px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+#abouttext h1 {
+  font-size: 3.5vw;
+  font-weight: 500;
+  color: #000;
+}
+
+#abouttext p {
+  line-height: normal;
+  font-size: 1.6vw;
+  font-weight: 400;
+  padding-top: 20px;
+}
+
+.resume {
+  text-decoration: none;
+  text-transform: uppercase;
+  color: #000;
+  font-weight: 600;
+  transition: padding-left 0.3s;
+}
+
+.resume:hover {
+  padding-left: 10px;
+}
+
+  /* end of about me */
+
+  /* start of projects */
+
+  #projects {
+    width: 100%;
+    height: 82vh;
+}
+
+.elem {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding: 2vw;
+    padding-right: 60px;
+    padding-left: 30px;
+    border-top: 1px solid #000;
+    transition: padding 0.5s;
+}
+
+.elem:hover {
+    padding-left: 5.5vw;
+}
+
+.elem a {
+    color: #000;
+    text-decoration: none;
+    font-size: 6vw;
+    font-weight: 500;
+    text-transform: uppercase;
+}
+
+.elem h5 {
+    font-size: 1vw;
+    font-weight: 600;
+    color: #000;
+    transition: padding 0.5s;
+}
+
+.elem:hover h5 {
+    padding-right: 2.5vw;
+}
+
+.elemlast {
+    border-bottom: 1px solid #000;
+}
+
+  /* end of projects */
+
+  /* start of footer */
+
+  #contact {
+    width: 100%;
+    height: 20vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .details1 {
+    gap: 20px;
+    padding-top: 100px;
+    padding-left: 20px;
+    display: flex;
+  }
+
+  .details1 h5 {
+    font-size: 1vw;
+    font-weight: 500;
+  }
+
+  #footer {
+    gap: 30px;
+    display: flex;
+    padding-right: 20px;
+    padding-top: 100px;
+  }
+
+  #footer a {
+    text-decoration: none;
+    text-transform: uppercase;
+    color: #000;
+    font-size: 1vw;
+    font-weight: 600;
+    transition: color 0.3s;
+  }
+
+  #footer a:hover {
+    color: #1b263b;
+  }
+
+  /* end of footer */

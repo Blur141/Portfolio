@@ -1,0 +1,51 @@
+import { education } from "../../data/portfolio";
+import { Slide } from "../../animation/Slide";
+import { BiBookOpen } from "react-icons/bi";
+
+export default function Education() {
+  return (
+    <section className="mt-20" id="education">
+      <Slide delay={0.14}>
+        <h2 className="font-incognito text-4xl sm:text-[3rem] mb-4 font-normal tracking-tight uppercase dark:text-zinc-300 text-zinc-700">
+          Education
+        </h2>
+      </Slide>
+
+      <Slide delay={0.16}>
+        <div className="flex flex-col gap-y-6 mt-8 max-w-3xl">
+          {education.map((edu) => (
+            <div
+              key={edu.id}
+              className="flex items-start gap-x-4 dark:bg-primary-bg bg-secondary-bg border dark:border-zinc-800 border-zinc-200 rounded-xl p-6 hover:dark:border-zinc-700 hover:border-zinc-300 duration-300"
+            >
+              <span className="grid place-items-center dark:bg-zinc-800 bg-zinc-100 border dark:border-zinc-700 border-zinc-200 rounded-md p-2 mt-0.5 flex-shrink-0">
+                <BiBookOpen className="text-xl dark:text-primary-color text-tertiary-color" />
+              </span>
+              <div>
+                <div className="flex items-center gap-x-3 flex-wrap gap-y-1 mb-1">
+                  <h3 className="font-incognito font-semibold text-lg leading-snug">
+                    {edu.degree}
+                  </h3>
+                  {edu.status === "In Progress" && (
+                    <span className="text-xs font-mono dark:bg-zinc-800 bg-zinc-100 dark:text-primary-color text-tertiary-color border dark:border-zinc-700 border-zinc-200 px-2 py-0.5 rounded-full">
+                      In Progress
+                    </span>
+                  )}
+                </div>
+                <p className="dark:text-zinc-400 text-zinc-500 text-sm">
+                  {edu.institution}
+                </p>
+                <time className="text-xs text-zinc-500 mt-1 tracking-widest uppercase block">
+                  {edu.startYear} – {edu.endYear}
+                </time>
+                <p className="dark:text-zinc-500 text-zinc-400 text-sm mt-3 leading-relaxed">
+                  {edu.coursework}
+                </p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </Slide>
+    </section>
+  );
+}

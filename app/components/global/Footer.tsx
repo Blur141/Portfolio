@@ -11,14 +11,12 @@ export default function Footer() {
   useEffect(() => {
     const panel = rightPanelRef.current;
     if (!panel) return;
-
     const handleMouseMove = (e: MouseEvent) => {
       const rect = panel.getBoundingClientRect();
       setDotPos({ x: e.clientX - rect.left, y: e.clientY - rect.top });
     };
     const handleEnter = () => setIsHovering(true);
     const handleLeave = () => setIsHovering(false);
-
     panel.addEventListener("mousemove", handleMouseMove);
     panel.addEventListener("mouseenter", handleEnter);
     panel.addEventListener("mouseleave", handleLeave);
@@ -30,30 +28,30 @@ export default function Footer() {
   }, []);
 
   return (
-    <footer id="footer-contact" className="mt-44 border-t dark:border-zinc-800 border-zinc-100">
-      <div className="max-w-7xl mx-auto grid lg:grid-cols-2 grid-cols-1 min-h-[380px]">
+    <footer id="footer-contact" className="mt-20 sm:mt-44 border-t dark:border-zinc-800 border-zinc-100">
+      <div className="max-w-7xl 2xl:max-w-[1600px] mx-auto grid lg:grid-cols-2 grid-cols-1 min-h-[320px] sm:min-h-[380px]">
 
-        {/* Left — contact info */}
-        <div className="md:px-16 px-6 py-20 flex flex-col justify-between border-r dark:border-zinc-800 border-zinc-100">
+        {/* Left */}
+        <div className="md:px-16 px-4 sm:px-6 py-12 sm:py-20 flex flex-col justify-between border-r dark:border-zinc-800 border-zinc-100">
           <div>
-            <p className="text-xs tracking-widest uppercase dark:text-zinc-500 text-zinc-400 mb-6">
+            <p className="text-xs tracking-widest uppercase dark:text-zinc-500 text-zinc-400 mb-5 sm:mb-6">
               Contact
             </p>
-            <h2 className="text-4xl lg:text-5xl font-semibold dark:text-white text-zinc-900 mb-4 leading-tight">
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl 2xl:text-6xl font-semibold dark:text-white text-zinc-900 mb-3 sm:mb-4 leading-tight">
               Let&apos;s talk?
             </h2>
-            <p className="dark:text-zinc-400 text-zinc-500 text-sm mb-10">
+            <p className="dark:text-zinc-400 text-zinc-500 text-xs sm:text-sm 2xl:text-base mb-8 sm:mb-10">
               Always open to new projects and collaborations.
             </p>
             <a
               href={`mailto:${profile.email}`}
-              className="inline-block text-base font-medium dark:text-white text-zinc-900 border-b-2 border-red-500 pb-1 hover:border-red-400 transition-colors duration-200"
+              className="inline-block text-sm sm:text-base 2xl:text-lg font-medium dark:text-white text-zinc-900 border-b-2 border-red-500 pb-1 hover:border-red-400 transition-colors duration-200 break-all"
             >
               {profile.email}
             </a>
           </div>
 
-          <div className="flex items-center gap-x-6 mt-16">
+          <div className="flex items-center flex-wrap gap-x-5 sm:gap-x-6 gap-y-3 mt-12 sm:mt-16">
             <a
               href="https://www.linkedin.com/in/mohammedniyasnf/"
               target="_blank"
@@ -79,7 +77,7 @@ export default function Footer() {
           </div>
         </div>
 
-        {/* Right — plain empty panel with cursor dot */}
+        {/* Right — plain panel with cursor dot, desktop only */}
         <div
           ref={rightPanelRef}
           className="relative overflow-hidden hidden lg:block cursor-none"
@@ -97,11 +95,11 @@ export default function Footer() {
       </div>
 
       {/* Bottom bar */}
-      <div className="max-w-7xl mx-auto md:px-16 px-6 py-5 flex items-center justify-between border-t dark:border-zinc-800 border-zinc-100">
+      <div className="max-w-7xl 2xl:max-w-[1600px] mx-auto md:px-16 px-4 sm:px-6 py-4 sm:py-5 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-y-1 sm:gap-y-0 border-t dark:border-zinc-800 border-zinc-100">
         <small className="text-xs dark:text-zinc-500 text-zinc-400">
           © {new Date().getFullYear()} {profile.fullName}
         </small>
-        <small className="text-xs dark:text-zinc-500 text-zinc-400">
+        <small className="text-xs dark:text-zinc-500 text-zinc-400 sm:text-right">
           {profile.headline}
         </small>
       </div>

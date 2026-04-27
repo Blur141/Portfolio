@@ -8,6 +8,10 @@ module.exports = {
   ],
   theme: {
     extend: {
+      screens: {
+        "3xl": "1920px",
+        "4xl": "2560px",
+      },
       fontFamily: {
         incognito: ["var(--incognito)"],
         inter: ["var(--inter)"],
@@ -26,6 +30,10 @@ module.exports = {
       },
       gridTemplateColumns: {
         custom: "1.2fr 1fr",
+      },
+      maxWidth: {
+        "8xl": "1440px",
+        "9xl": "1600px",
       },
     },
   },

@@ -16,11 +16,7 @@ export default function MobileMenu() {
 
   const onToggleNav = () => {
     setNavShow((status) => {
-      if (status) {
-        document.body.style.overflow = "auto";
-      } else {
-        document.body.style.overflow = "hidden";
-      }
+      document.body.style.overflow = status ? "auto" : "hidden";
       return !status;
     });
   };
@@ -35,13 +31,13 @@ export default function MobileMenu() {
         <RxHamburgerMenu className="text-xl" />
       </button>
       <div
-        className={`md:hidden fixed left-0 top-0 z-10 h-full w-full transform duration-[600ms] ease-[cubic-bezier(0.7,0,0,1)] dark:bg-zinc-900 bg-white ${
+        className={`md:hidden fixed left-0 top-0 z-50 h-full w-full transform duration-[600ms] ease-[cubic-bezier(0.7,0,0,1)] dark:bg-zinc-900 bg-white ${
           navShow ? "translate-x-0 rounded-none" : "translate-x-full"
         }`}
       >
-        <div className="flex items-center justify-between mt-6 px-8">
+        <div className="flex items-center justify-between mt-6 px-6 sm:px-8">
           <Link href="/" onClick={onToggleNav} className="flex items-center">
-            <Image src="/Logo.png" alt="Logo" width={40} height={40} className="object-contain" />
+            <Image src="/Logo.png" alt="Logo" width={36} height={36} className="object-contain" />
           </Link>
           <button
             aria-label="Toggle Menu"
@@ -58,11 +54,11 @@ export default function MobileMenu() {
             <Link
               key={link.title}
               href={link.href}
-              className="flex items-center gap-x-2 font-incognito font-semibold text-lg dark:shadow-line-dark shadow-line-light p-6 group"
+              className="flex items-center gap-x-3 font-incognito font-semibold text-lg sm:text-xl dark:shadow-line-dark shadow-line-light p-5 sm:p-6 group"
               onClick={onToggleNav}
             >
               <link.icon
-                className="text-zinc-500 group-hover:dark:text-white group-hover:text-zinc-800 duration-300"
+                className="text-zinc-500 group-hover:dark:text-white group-hover:text-zinc-800 duration-300 text-xl"
                 aria-hidden="true"
               />
               {link.title}

@@ -1,50 +1,109 @@
+"use client";
+
+import { profile } from "@/app/data/portfolio";
+import { useEffect, useRef, useState } from "react";
+
 export default function Footer() {
+  const [dotPos, setDotPos] = useState({ x: -100, y: -100 });
+  const [isHovering, setIsHovering] = useState(false);
+  const rightPanelRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const panel = rightPanelRef.current;
+    if (!panel) return;
+
+    const handleMouseMove = (e: MouseEvent) => {
+      const rect = panel.getBoundingClientRect();
+      setDotPos({ x: e.clientX - rect.left, y: e.clientY - rect.top });
+    };
+    const handleEnter = () => setIsHovering(true);
+    const handleLeave = () => setIsHovering(false);
+
+    panel.addEventListener("mousemove", handleMouseMove);
+    panel.addEventListener("mouseenter", handleEnter);
+    panel.addEventListener("mouseleave", handleLeave);
+    return () => {
+      panel.removeEventListener("mousemove", handleMouseMove);
+      panel.removeEventListener("mouseenter", handleEnter);
+      panel.removeEventListener("mouseleave", handleLeave);
+    };
+  }, []);
+
   return (
-    <footer className="border-t dark:border-zinc-800 border-zinc-100 mt-44 lg:min-h-[250px] min-h-full relative">
-      <div className="max-w-7xl mx-auto flex lg:flex-row flex-col items-center lg:justify-between justify-center gap-y-4 md:px-16 px-6 py-16">
-        <div className="flex md:flex-row flex-col items-center gap-x-2">
-          <h3 className="font-inter">Built with:</h3>
-          <ul className="flex items-center gap-x-4 text-sm dark:text-zinc-400 text-zinc-500 md:mt-0 mt-3">
-            <li>
-              <a
-                href="https://nextjs.org"
-                rel="noreferrer noopener"
-                target="_blank"
-                className="dark:hover:text-white hover:text-zinc-800 hover:underline duration-200"
-              >
-                Next.js
-              </a>
-            </li>
-            <li>·</li>
-            <li>
-              <a
-                href="https://tailwindcss.com"
-                rel="noreferrer noopener"
-                target="_blank"
-                className="dark:hover:text-white hover:text-zinc-800 hover:underline duration-200"
-              >
-                Tailwind CSS
-              </a>
-            </li>
-            <li>·</li>
-            <li>
-              <a
-                href="https://fastapi.tiangolo.com"
-                rel="noreferrer noopener"
-                target="_blank"
-                className="dark:hover:text-white hover:text-zinc-800 hover:underline duration-200"
-              >
-                FastAPI
-              </a>
-            </li>
-          </ul>
+    <footer id="footer-contact" className="mt-44 border-t dark:border-zinc-800 border-zinc-100">
+      <div className="max-w-7xl mx-auto grid lg:grid-cols-2 grid-cols-1 min-h-[380px]">
+
+        {/* Left — contact info */}
+        <div className="md:px-16 px-6 py-20 flex flex-col justify-between border-r dark:border-zinc-800 border-zinc-100">
+          <div>
+            <p className="text-xs tracking-widest uppercase dark:text-zinc-500 text-zinc-400 mb-6">
+              Contact
+            </p>
+            <h2 className="text-4xl lg:text-5xl font-semibold dark:text-white text-zinc-900 mb-4 leading-tight">
+              Let&apos;s talk?
+            </h2>
+            <p className="dark:text-zinc-400 text-zinc-500 text-sm mb-10">
+              Always open to new projects and collaborations.
+            </p>
+            <a
+              href={`mailto:${profile.email}`}
+              className="inline-block text-base font-medium dark:text-white text-zinc-900 border-b-2 border-red-500 pb-1 hover:border-red-400 transition-colors duration-200"
+            >
+              {profile.email}
+            </a>
+          </div>
+
+          <div className="flex items-center gap-x-6 mt-16">
+            <a
+              href="https://www.linkedin.com/in/mohammedniyasnf/"
+              target="_blank"
+              rel="noreferrer noopener"
+              className="text-xs tracking-widest uppercase dark:text-zinc-500 text-zinc-400 dark:hover:text-white hover:text-zinc-900 transition-colors duration-200"
+            >
+              LinkedIn
+            </a>
+            <a
+              href="https://github.com/Blur141"
+              target="_blank"
+              rel="noreferrer noopener"
+              className="text-xs tracking-widest uppercase dark:text-zinc-500 text-zinc-400 dark:hover:text-white hover:text-zinc-900 transition-colors duration-200"
+            >
+              GitHub
+            </a>
+            <a
+              href={`mailto:${profile.email}`}
+              className="text-xs tracking-widest uppercase dark:text-zinc-500 text-zinc-400 dark:hover:text-white hover:text-zinc-900 transition-colors duration-200"
+            >
+              Email
+            </a>
+          </div>
         </div>
 
-        <div className="flex flex-col lg:items-end items-center lg:text-start text-center">
-          <small className="text-zinc-500">
-            © Mohammed Niyas NF {new Date().getFullYear()} · Dubai, UAE
-          </small>
+        {/* Right — plain empty panel with cursor dot */}
+        <div
+          ref={rightPanelRef}
+          className="relative overflow-hidden hidden lg:block cursor-none"
+        >
+          <div
+            className="absolute w-2 h-2 rounded-full bg-teal-400 pointer-events-none transition-opacity duration-300"
+            style={{
+              left: dotPos.x,
+              top: dotPos.y,
+              transform: "translate(-50%, -50%)",
+              opacity: isHovering ? 1 : 0,
+            }}
+          />
         </div>
+      </div>
+
+      {/* Bottom bar */}
+      <div className="max-w-7xl mx-auto md:px-16 px-6 py-5 flex items-center justify-between border-t dark:border-zinc-800 border-zinc-100">
+        <small className="text-xs dark:text-zinc-500 text-zinc-400">
+          © {new Date().getFullYear()} {profile.fullName}
+        </small>
+        <small className="text-xs dark:text-zinc-500 text-zinc-400">
+          {profile.headline}
+        </small>
       </div>
     </footer>
   );

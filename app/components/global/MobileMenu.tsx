@@ -11,7 +11,7 @@ export default function MobileMenu() {
     { title: "About", href: "/about", icon: HiUser },
     { title: "Projects", href: "/#projects", icon: HiCode },
     { title: "Education", href: "/about#education", icon: HiAcademicCap },
-    { title: "Contact", href: "/#contact", icon: HiMail },
+    { title: "Contact", href: "#footer-contact", icon: HiMail },
   ];
 
   const onToggleNav = () => {

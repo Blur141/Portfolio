@@ -5,27 +5,22 @@ import Social from "../components/shared/Social";
 import Skills from "../components/pages/Skills";
 import Certifications from "../components/pages/Certifications";
 import Education from "../components/pages/Education";
+import ContactSection from "../components/global/ContactSection";
 import { Slide } from "../animation/Slide";
 import Image from "next/image";
 
 export const metadata: Metadata = {
   title: "About | Mohammed Niyas NF",
-  description: "Learn more about Mohammed Niyas — Linux Engineer and aspiring Cybersecurity Professional based in Dubai, UAE.",
+  description:
+    "Learn more about Mohammed Niyas — Linux Engineer and aspiring Cybersecurity Professional based in Dubai, UAE.",
 };
 
 export default function About() {
-  const stats = [
-    { label: "Years Experience", value: "2+" },
-    { label: "Certifications", value: "5" },
-    { label: "Attack Types Detected", value: "9" },
-    { label: "Services Identified", value: "80+" },
-  ];
-
   return (
     <main className="relative lg:max-w-7xl mx-auto max-w-3xl md:px-16 px-4 sm:px-6 pb-16">
       <section className="relative grid lg:grid-cols-custom grid-cols-1 gap-x-10 justify-items-center">
 
-        {/* Left: Bio */}
+        {/* ── Left: Bio text ── */}
         <div className="order-2 lg:order-none w-full">
           <Slide>
             <span className="inline-flex items-center gap-x-2 dark:bg-primary-bg bg-secondary-bg border dark:border-zinc-800 border-zinc-200 text-xs sm:text-sm rounded-full px-3 sm:px-4 py-1 mb-5 sm:mb-6 dark:text-primary-color text-tertiary-color font-mono">
@@ -43,32 +38,47 @@ export default function About() {
 
             <div className="dark:text-zinc-400 text-zinc-600 leading-relaxed space-y-5 text-sm sm:text-[15px]">
               <p>
-                I&apos;m a Linux Engineer with 2 years of hands-on experience managing enterprise{" "}
-                <span className="dark:text-zinc-300 text-zinc-700 font-medium">Oracle Linux and Ubuntu</span>{" "}
-                environments across multi-client infrastructures in the UAE. My work spans keeping
-                mission-critical systems highly available, automating operations with{" "}
-                <span className="dark:text-zinc-300 text-zinc-700 font-medium">Bash and Ansible</span>,
-                and managing incident response through SOC and NOC workflows.
+                I&apos;m a Linux Engineer with 2 years of hands-on experience
+                managing enterprise{" "}
+                <span className="dark:text-zinc-300 text-zinc-700 font-medium">
+                  Oracle Linux and Ubuntu
+                </span>{" "}
+                environments across multi-client infrastructures in the UAE.
+                My work spans keeping mission-critical systems highly available,
+                automating operations with{" "}
+                <span className="dark:text-zinc-300 text-zinc-700 font-medium">
+                  Bash and Ansible
+                </span>
+                , and managing incident response through SOC and NOC workflows.
               </p>
               <p>
                 My drive for security led me to build{" "}
-                <strong className="dark:text-white text-zinc-800 font-semibold">ORION IDS</strong>{" "}
-                — a production-grade, full-stack Network Intrusion Detection System and my MSc capstone.
-                It delivers Wireshark-grade live packet capture via Scapy, a stateful rule-based engine
-                covering 9 distinct attack vectors, and a React dashboard streaming real-time threat data
-                over WebSocket at sub-100ms latency.
+                <strong className="dark:text-white text-zinc-800 font-semibold">
+                  ORION IDS
+                </strong>{" "}
+                — a production-grade, full-stack Network Intrusion Detection
+                System and my MSc capstone. It delivers Wireshark-grade live
+                packet capture via Scapy, a stateful rule-based engine covering
+                9 distinct attack vectors, and a React dashboard streaming
+                real-time threat data over WebSocket at sub-100ms latency.
               </p>
               <p>
                 I hold certifications in{" "}
-                <span className="dark:text-zinc-300 text-zinc-700 font-medium">AWS and Oracle Cloud Infrastructure</span>{" "}
+                <span className="dark:text-zinc-300 text-zinc-700 font-medium">
+                  AWS and Oracle Cloud Infrastructure
+                </span>{" "}
                 and am currently pursuing an{" "}
-                <span className="dark:text-zinc-300 text-zinc-700 font-medium">MSc in Information Security</span>.
-                I&apos;m focused on transitioning into a cybersecurity-engineering role — particularly in
-                SOC operations, cloud security, or infrastructure hardening.
+                <span className="dark:text-zinc-300 text-zinc-700 font-medium">
+                  MSc in Information Security
+                </span>
+                . I&apos;m focused on transitioning into a
+                cybersecurity-engineering role — particularly in SOC operations,
+                cloud security, or infrastructure hardening.
               </p>
               <p>
-                Beyond the terminal, I communicate fluently in English, Malayalam, Tamil, and Hindi —
-                bridging technical and human contexts across diverse teams.
+                Beyond the terminal, I communicate fluently in English,
+                Malayalam, Tamil, and Hindi — bridging technical and human
+                contexts across diverse teams.
               </p>
             </div>
           </Slide>
@@ -76,27 +86,9 @@ export default function About() {
           <Slide delay={0.1}>
             <Social type="social" />
           </Slide>
-
-          <Slide delay={0.14}>
-            <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 mt-2 mb-10">
-              {stats.map((stat) => (
-                <div
-                  key={stat.label}
-                  className="dark:bg-primary-bg bg-secondary-bg border dark:border-zinc-800 border-zinc-200 rounded-xl p-4 text-center hover:dark:border-zinc-700 hover:border-zinc-300 duration-300"
-                >
-                  <p className="font-incognito font-semibold text-2xl dark:text-primary-color text-tertiary-color">
-                    {stat.value}
-                  </p>
-                  <p className="text-xs dark:text-zinc-500 text-zinc-400 mt-1 leading-tight">
-                    {stat.label}
-                  </p>
-                </div>
-              ))}
-            </div>
-          </Slide>
         </div>
 
-        {/* Right: Sidebar */}
+        {/* ── Right: Sticky Sidebar ── */}
         <aside className="flex flex-col lg:justify-self-center justify-self-start gap-y-8 lg:order-1 order-none mb-10 sm:mb-12 w-full lg:w-auto">
           <Slide delay={0.1}>
             <div className="sticky top-10 flex flex-col gap-y-4 w-full lg:w-[300px]">
@@ -121,7 +113,9 @@ export default function About() {
                 </p>
                 <div className="flex items-center gap-x-1.5 mt-2">
                   <span className="w-2 h-2 rounded-full dark:bg-primary-color bg-secondary-color flex-shrink-0"></span>
-                  <span className="text-xs dark:text-primary-color text-tertiary-color font-mono">Dubai, UAE</span>
+                  <span className="text-xs dark:text-primary-color text-tertiary-color font-mono">
+                    Dubai, UAE
+                  </span>
                 </div>
               </div>
 
@@ -159,6 +153,9 @@ export default function About() {
       <Skills />
       <Education />
       <Certifications />
+
+      {/* ── Contact ── */}
+      <ContactSection />
     </main>
   );
 }

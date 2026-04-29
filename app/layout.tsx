@@ -4,6 +4,7 @@ import { Inter } from "next/font/google";
 import { incognito, gitlabmono } from "./font/font";
 import Navbar from "./components/global/Navbar";
 import Footer from "./components/global/Footer";
+// ContactSection is imported per-page (home, about) — not global
 import { Providers } from "./providers";
 
 const inter = Inter({

@@ -3,6 +3,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { useState, useEffect } from "react";
 import { createPortal } from "react-dom";
+import { usePathname } from "next/navigation";
 import { RxHamburgerMenu } from "react-icons/rx";
 import { HiOutlineX, HiUser, HiCode, HiAcademicCap, HiMail } from "react-icons/hi";
 
@@ -10,6 +11,7 @@ export default function MobileMenu() {
   const [navShow, setNavShow] = useState(false);
   const [mounted, setMounted] = useState(false);
   const [isDark, setIsDark] = useState(false);
+  const pathname = usePathname();
 
   useEffect(() => {
     setMounted(true);
@@ -17,10 +19,7 @@ export default function MobileMenu() {
     const observer = new MutationObserver(() => {
       setIsDark(document.documentElement.classList.contains("dark"));
     });
-    observer.observe(document.documentElement, {
-      attributes: true,
-      attributeFilter: ["class"],
-    });
+    observer.observe(document.documentElement, { attributes: true, attributeFilter: ["class"] });
     return () => observer.disconnect();
   }, []);
 
@@ -31,6 +30,12 @@ export default function MobileMenu() {
     { title: "Contact", href: "#footer-contact", icon: HiMail },
   ];
 
+  const isActive = (href: string) => {
+    if (href === "/about") return pathname === "/about";
+    if (href === "/about#education") return pathname === "/about";
+    return false;
+  };
+
   const onToggleNav = () => {
     setNavShow((status) => {
       document.body.style.overflow = status ? "auto" : "hidden";
@@ -38,8 +43,6 @@ export default function MobileMenu() {
     });
   };
 
-  // The overlay is portaled directly into <body> so it is never
-  // trapped inside the Navbar's z-30 stacking context.
   const overlay = (
     <div
       style={{ backgroundColor: isDark ? "#18181b" : "#ffffff" }}
@@ -47,16 +50,10 @@ export default function MobileMenu() {
         navShow ? "translate-x-0" : "translate-x-full"
       }`}
     >
-      {/* Header row */}
+      {/* Header */}
       <div className="flex items-center justify-between mt-6 px-6 sm:px-8">
         <Link href="/" onClick={onToggleNav}>
-          <Image
-            src="/Logo.png"
-            alt="Logo"
-            width={40}
-            height={40}
-            className="object-contain"
-          />
+          <Image src="/Logo.png" alt="Logo" width={40} height={40} className="object-contain" />
         </Link>
         <button
           aria-label="Close Menu"
@@ -69,27 +66,40 @@ export default function MobileMenu() {
 
       {/* Nav links */}
       <nav className="flex flex-col mt-6">
-        {data.map((link) => (
-          <Link
-            key={link.title}
-            href={link.href}
-            onClick={onToggleNav}
-            className="flex items-center gap-x-3 font-incognito font-semibold text-xl p-6 group border-b dark:border-zinc-800 border-zinc-100"
-          >
-            <link.icon
-              className="text-zinc-500 group-hover:dark:text-white group-hover:text-zinc-800 duration-300 text-xl flex-shrink-0"
-              aria-hidden="true"
-            />
-            <span className="dark:text-white text-zinc-900">{link.title}</span>
-          </Link>
-        ))}
+        {data.map((link) => {
+          const active = isActive(link.href);
+          return (
+            <Link
+              key={link.title}
+              href={link.href}
+              onClick={onToggleNav}
+              className={`flex items-center gap-x-3 font-incognito font-semibold text-xl p-6 border-b dark:border-zinc-800 border-zinc-100 group transition-colors duration-200 ${
+                active
+                  ? "dark:text-zinc-500 text-zinc-400 pointer-events-none"
+                  : "dark:text-white text-zinc-900 dark:hover:text-primary-color hover:text-tertiary-color"
+              }`}
+            >
+              <link.icon
+                className={`text-xl flex-shrink-0 transition-colors duration-200 ${
+                  active ? "dark:text-zinc-600 text-zinc-300" : "text-zinc-500 group-hover:dark:text-primary-color group-hover:text-tertiary-color"
+                }`}
+                aria-hidden="true"
+              />
+              {link.title}
+              {active && (
+                <span className="ml-auto text-xs font-mono dark:text-zinc-600 text-zinc-300 tracking-widest uppercase">
+                  current
+                </span>
+              )}
+            </Link>
+          );
+        })}
       </nav>
     </div>
   );
 
   return (
     <>
-      {/* Hamburger button — stays inside Navbar */}
       <button
         aria-label="Toggle Menu"
         onClick={onToggleNav}
@@ -97,8 +107,6 @@ export default function MobileMenu() {
       >
         <RxHamburgerMenu className="text-xl" />
       </button>
-
-      {/* Portal the overlay to <body> so it escapes Navbar's stacking context */}
       {mounted && createPortal(overlay, document.body)}
     </>
   );

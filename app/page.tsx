@@ -4,6 +4,7 @@ import Job from "./components/pages/Job";
 import Projects from "./components/pages/Projects";
 import Social from "./components/shared/Social";
 import WhatIDo from "./components/pages/WhatIDo";
+import ContactSection from "./components/global/ContactSection";
 import { Slide } from "./animation/Slide";
 
 export default function Home() {
@@ -33,12 +34,10 @@ export default function Home() {
               {profile.shortBio}
             </p>
           </Slide>
-
           <Slide delay={0.1}>
             <Social type="social" />
           </Slide>
         </div>
-
         <Slide delay={0.14}>
           <div className="w-full xl:w-auto flex justify-center xl:justify-end">
             <HeroSvg />
@@ -46,13 +45,8 @@ export default function Home() {
         </Slide>
       </section>
 
-      {/* ── What I Do ── */}
       <WhatIDo />
-
-      {/* ── Work Experience ── */}
       <Job />
-
-      {/* ── Projects ── */}
       <Projects />
 
       {/* ── Areas of Interest ── */}
@@ -75,6 +69,9 @@ export default function Home() {
           </div>
         </Slide>
       </section>
+
+      {/* ── Contact ── */}
+      <ContactSection />
     </main>
   );
 }

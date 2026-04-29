@@ -22,10 +22,10 @@ export default function About() {
   ];
 
   return (
-    <main className="relative max-w-7xl 2xl:max-w-[1600px] mx-auto md:px-16 px-4 sm:px-6 pb-16">
-      <section className="relative grid lg:grid-cols-custom grid-cols-1 gap-x-10 2xl:gap-x-16 justify-items-center">
+    <main className="relative lg:max-w-7xl mx-auto max-w-3xl md:px-16 px-4 sm:px-6 pb-16">
+      <section className="relative grid lg:grid-cols-custom grid-cols-1 gap-x-10 justify-items-center">
 
-        {/* ── Left: Bio text ── */}
+        {/* Left: Bio */}
         <div className="order-2 lg:order-none w-full">
           <Slide>
             <span className="inline-flex items-center gap-x-2 dark:bg-primary-bg bg-secondary-bg border dark:border-zinc-800 border-zinc-200 text-xs sm:text-sm rounded-full px-3 sm:px-4 py-1 mb-5 sm:mb-6 dark:text-primary-color text-tertiary-color font-mono">
@@ -36,12 +36,12 @@ export default function About() {
               Open to new opportunities
             </span>
 
-            <h1 className="font-incognito font-semibold tracking-tight text-2xl sm:text-3xl md:text-4xl lg:text-5xl 2xl:text-6xl lg:leading-tight mb-6 sm:mb-8">
+            <h1 className="font-incognito font-semibold tracking-tight text-2xl sm:text-4xl lg:text-5xl lg:leading-tight basis-1/2 mb-8">
               I&apos;m {profile.fullName}. I live in {profile.location}, where I
               secure and automate the future.
             </h1>
 
-            <div className="dark:text-zinc-400 text-zinc-600 leading-relaxed space-y-4 sm:space-y-5 text-sm sm:text-[15px] 2xl:text-base">
+            <div className="dark:text-zinc-400 text-zinc-600 leading-relaxed space-y-5 text-sm sm:text-[15px]">
               <p>
                 I&apos;m a Linux Engineer with 2 years of hands-on experience managing enterprise{" "}
                 <span className="dark:text-zinc-300 text-zinc-700 font-medium">Oracle Linux and Ubuntu</span>{" "}
@@ -77,15 +77,14 @@ export default function About() {
             <Social type="social" />
           </Slide>
 
-          {/* Stats */}
           <Slide delay={0.14}>
-            <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 sm:gap-4 mt-2 mb-8 sm:mb-10">
+            <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 mt-2 mb-10">
               {stats.map((stat) => (
                 <div
                   key={stat.label}
-                  className="dark:bg-primary-bg bg-secondary-bg border dark:border-zinc-800 border-zinc-200 rounded-xl p-3 sm:p-4 text-center hover:dark:border-zinc-700 hover:border-zinc-300 duration-300"
+                  className="dark:bg-primary-bg bg-secondary-bg border dark:border-zinc-800 border-zinc-200 rounded-xl p-4 text-center hover:dark:border-zinc-700 hover:border-zinc-300 duration-300"
                 >
-                  <p className="font-incognito font-semibold text-xl sm:text-2xl dark:text-primary-color text-tertiary-color">
+                  <p className="font-incognito font-semibold text-2xl dark:text-primary-color text-tertiary-color">
                     {stat.value}
                   </p>
                   <p className="text-xs dark:text-zinc-500 text-zinc-400 mt-1 leading-tight">
@@ -97,13 +96,12 @@ export default function About() {
           </Slide>
         </div>
 
-        {/* ── Right: Sticky Sidebar ── */}
-        <aside className="flex flex-col lg:justify-self-center justify-self-start gap-y-6 sm:gap-y-8 lg:order-1 order-none mb-8 sm:mb-12 w-full lg:w-auto">
+        {/* Right: Sidebar */}
+        <aside className="flex flex-col lg:justify-self-center justify-self-start gap-y-8 lg:order-1 order-none mb-10 sm:mb-12 w-full lg:w-auto">
           <Slide delay={0.1}>
-            <div className="sticky top-10 flex flex-col gap-y-3 sm:gap-y-4 w-full lg:w-[280px] xl:w-[300px]">
+            <div className="sticky top-10 flex flex-col gap-y-4 w-full lg:w-[300px]">
 
-              {/* Profile photo */}
-              <div className="rounded-2xl overflow-hidden dark:bg-primary-bg bg-secondary-bg border dark:border-zinc-800 border-zinc-200 w-full lg:w-[280px] xl:w-[300px] h-[260px] sm:h-[320px] lg:h-[360px] relative">
+              <div className="rounded-2xl overflow-hidden dark:bg-primary-bg bg-secondary-bg border dark:border-zinc-800 border-zinc-200 w-full lg:w-[300px] h-[260px] sm:h-[320px] lg:h-[360px] relative">
                 <Image
                   src="/profile.png"
                   fill
@@ -114,12 +112,11 @@ export default function About() {
                 />
               </div>
 
-              {/* Name card */}
-              <div className="dark:bg-primary-bg bg-secondary-bg border dark:border-zinc-800 border-zinc-200 rounded-xl px-4 sm:px-5 py-3 sm:py-4">
-                <p className="font-incognito font-semibold text-sm sm:text-base dark:text-white text-zinc-800">
+              <div className="dark:bg-primary-bg bg-secondary-bg border dark:border-zinc-800 border-zinc-200 rounded-xl px-5 py-4">
+                <p className="font-incognito font-semibold text-base dark:text-white text-zinc-800">
                   Mohammed Niyas NF
                 </p>
-                <p className="text-xs sm:text-sm dark:text-zinc-400 text-zinc-500 mt-0.5">
+                <p className="text-sm dark:text-zinc-400 text-zinc-500 mt-0.5">
                   Linux Engineer · Cybersecurity Enthusiast
                 </p>
                 <div className="flex items-center gap-x-1.5 mt-2">
@@ -128,13 +125,12 @@ export default function About() {
                 </div>
               </div>
 
-              {/* Resume */}
               <div className="flex items-stretch gap-x-2">
                 <a
                   href={profile.resumeURL}
                   rel="noreferrer noopener"
                   target="_blank"
-                  className="flex items-center justify-center gap-x-2 flex-1 dark:bg-primary-color bg-secondary-color text-zinc-900 font-incognito font-semibold rounded-xl py-2.5 sm:py-3 text-sm hover:opacity-90 duration-200"
+                  className="flex items-center justify-center gap-x-2 flex-1 dark:bg-primary-color bg-secondary-color text-zinc-900 font-incognito font-semibold rounded-xl py-3 text-sm hover:opacity-90 duration-200"
                 >
                   View Resume
                 </a>
@@ -142,18 +138,17 @@ export default function About() {
                   href={profile.resumeURL}
                   download
                   title="Download Resume"
-                  className="flex items-center justify-center dark:bg-primary-bg bg-secondary-bg border dark:border-zinc-800 border-zinc-200 rounded-xl px-3 sm:px-4 dark:hover:border-zinc-700 hover:border-zinc-300 duration-200 dark:text-primary-color text-tertiary-color"
+                  className="flex items-center justify-center dark:bg-primary-bg bg-secondary-bg border dark:border-zinc-800 border-zinc-200 rounded-xl px-4 dark:hover:border-zinc-700 hover:border-zinc-300 duration-200 dark:text-primary-color text-tertiary-color"
                 >
-                  <BiSolidDownload className="text-base sm:text-lg" />
+                  <BiSolidDownload className="text-lg" />
                 </a>
               </div>
 
-              {/* Email */}
               <a
                 href={`mailto:${profile.email}`}
-                className="flex items-center justify-center gap-x-2 text-xs sm:text-sm dark:text-zinc-400 text-zinc-500 dark:bg-primary-bg bg-secondary-bg border dark:border-zinc-800 border-zinc-200 rounded-xl py-2.5 sm:py-3 px-4 hover:dark:border-zinc-700 hover:border-zinc-300 hover:dark:text-white hover:text-zinc-800 duration-200"
+                className="flex items-center justify-center gap-x-2 text-sm dark:text-zinc-400 text-zinc-500 dark:bg-primary-bg bg-secondary-bg border dark:border-zinc-800 border-zinc-200 rounded-xl py-3 px-4 hover:dark:border-zinc-700 hover:border-zinc-300 hover:dark:text-white hover:text-zinc-800 duration-200"
               >
-                <BiEnvelope className="text-sm sm:text-base flex-shrink-0" />
+                <BiEnvelope className="text-base flex-shrink-0" />
                 <span className="truncate">{profile.email}</span>
               </a>
             </div>

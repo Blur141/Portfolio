@@ -67,7 +67,7 @@ export default function WhatIDo() {
           Capabilities
         </h2>
         <p className="font-incognito text-xl sm:text-2xl dark:text-white text-zinc-800 max-w-2xl leading-snug mb-16">
-          My foundation is built on solid Linux engineering, and I am actively expanding my expertise in cybersecurity and cloud infrastructure. 👇
+          My foundation is built on solid Linux engineering, and I am actively expanding my expertise in cybersecurity and cloud infrastructure.
         </p>
       </Slide>
 

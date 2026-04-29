@@ -5,7 +5,6 @@ import Social from "../components/shared/Social";
 import Skills from "../components/pages/Skills";
 import Certifications from "../components/pages/Certifications";
 import Education from "../components/pages/Education";
-import ContactSection from "../components/global/ContactSection";
 import { Slide } from "../animation/Slide";
 import Image from "next/image";
 
@@ -153,9 +152,6 @@ export default function About() {
       <Skills />
       <Education />
       <Certifications />
-
-      {/* ── Contact ── */}
-      <ContactSection />
     </main>
   );
 }

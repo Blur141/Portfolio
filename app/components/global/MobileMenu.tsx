@@ -5,7 +5,7 @@ import { useState, useEffect } from "react";
 import { createPortal } from "react-dom";
 import { usePathname } from "next/navigation";
 import { RxHamburgerMenu } from "react-icons/rx";
-import { HiOutlineX, HiUser, HiCode, HiAcademicCap, HiMail } from "react-icons/hi";
+import { HiOutlineX, HiUser, HiCode, HiAcademicCap, HiMail, HiHome } from "react-icons/hi";
 
 export default function MobileMenu() {
   const [navShow, setNavShow] = useState(false);
@@ -24,6 +24,7 @@ export default function MobileMenu() {
   }, []);
 
   const data = [
+    { title: "Home", href: "/", icon: HiHome },
     { title: "About", href: "/about", icon: HiUser },
     { title: "Projects", href: "/#projects", icon: HiCode },
     { title: "Education", href: "/about#education", icon: HiAcademicCap },
@@ -31,6 +32,7 @@ export default function MobileMenu() {
   ];
 
   const isActive = (href: string) => {
+    if (href === "/") return pathname === "/";
     if (href === "/about") return pathname === "/about";
     if (href === "/about#education") return pathname === "/about";
     return false;

@@ -35,7 +35,7 @@ const services = [
   },
   {
     number: "03",
-    title: "< Cloud\u00a0& Virtualisation />",
+    title: "< Cloud & Virtualisation />",
     subtitle: "Building foundational knowledge in cloud platforms and scalable infrastructure.",
     items: [
       { name: "Oracle Cloud (OCI)", icon: SiOracle },
@@ -81,7 +81,7 @@ export default function WhatIDo() {
                 <span className="font-mono text-sm dark:text-zinc-600 text-zinc-400 tracking-widest">
                   {service.number}
                 </span>
-                <h3 className="font-incognito font-semibold text-2xl sm:text-3xl lg:text-4xl tracking-tight leading-tight dark:text-white text-zinc-900">
+                <h3 className="font-incognito font-semibold text-xl sm:text-2xl lg:text-3xl tracking-tight leading-tight dark:text-white text-zinc-900">
                   {service.title}
                 </h3>
                 <p className="text-sm dark:text-zinc-500 text-zinc-500 leading-relaxed max-w-xs">
